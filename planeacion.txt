@@ -1,0 +1,93 @@
+📅 Plan Semanal: 5 semanas para construir SmartPot
+Objetivo final: Sistema completo en Raspberry Pi, con ESP32, API, base de datos, riego automático y notificaciones — listo para usar 24/7.
+________________________________________
+🗓️ Semana 1: Preparación y estructura del proyecto
+Objetivo: Tener el repositorio listo, la estructura definida, y el primer endpoint funcional.
+📌 Tareas diarias (3h/día)
+Día	Tarea
+Lunes	Crear repositorio en GitHub, estructura de carpetas, README.md, LICENSE, .gitignore.
+Martes	Iniciar proyecto ASP.NET Core (API REST), añadir SignalR, EF Core, y Docker.
+Miércoles	Crear primer endpoint: POST /api/smartpot/data (recibe datos del ESP32).
+Jueves	Añadir base de datos (PostgreSQL) y modelo PlantData.
+Viernes	Probar endpoint con Postman o curl. Documentar en README.md.
+✅ Entregable Semana 1:
+•	Repositorio con estructura completa.
+•	API con endpoint funcional.
+•	Documentación básica.
+________________________________________
+🗓️ Semana 2: Hardware y comunicación ESP32
+Objetivo: Tener el ESP32 enviando datos a la API, y el sistema de riego básico funcionando.
+📌 Tareas diarias (3h/día)
+Día	Tarea
+Lunes	Programar ESP32 (C++) para leer sensor de humedad y enviar datos a la API.
+Martes	Conectar ESP32 a la API (prueba con IP local).
+Miércoles	Añadir control de relé (riego automático) en ESP32.
+Jueves	Probar riego automático con un LED o bomba simulada.
+Viernes	Documentar hardware en docs/hardware.md.
+✅ Entregable Semana 2:
+•	ESP32 enviando datos a la API.
+•	Sistema de riego básico funcionando.
+•	Documentación de hardware.
+________________________________________
+🗓️ Semana 3: Arquitectura limpia y patrones
+Objetivo: Refactorizar la API con arquitectura limpia y patrones de diseño.
+📌 Tareas diarias (3h/día)
+Día	Tarea
+Lunes	Crear capas: Domain, Application, Infrastructure.
+Martes	Implementar patrón Repository y Unit of Work.
+Miércoles	Añadir patrón Strategy para reglas de alerta (ej. si humedad < 30%).
+Jueves	Implementar WebSockets (SignalR) para alertas en tiempo real.
+Viernes	Probar alertas con un cliente HTML simple.
+✅ Entregable Semana 3:
+•	API con arquitectura limpia.
+•	Patrones de diseño implementados.
+•	Alertas en tiempo real funcionando.
+________________________________________
+🗓️ Semana 4: Despliegue en Raspberry Pi
+Objetivo: Tener el sistema desplegado en Raspberry Pi, accesible 24/7.
+📌 Tareas diarias (3h/día)
+Día	Tarea
+Lunes	Instalar Raspberry Pi OS, Docker, y Docker Compose.
+Martes	Crear docker-compose.yml para API + PostgreSQL.
+Miércoles	Desplegar API en Raspberry Pi. Probar con IP local.
+Jueves	Conectar ESP32 a la API en Raspberry Pi.
+Viernes	Configurar red (IP fija, firewall, SSH).
+✅ Entregable Semana 4:
+•	Sistema desplegado en Raspberry Pi.
+•	API accesible desde la red local.
+•	ESP32 conectado y enviando datos.
+________________________________________
+🗓️ Semana 5: Notificaciones, dashboard y documentación final
+Objetivo: Añadir notificaciones, dashboard simple y documentación completa.
+📌 Tareas diarias (3h/día)
+Día	Tarea
+Lunes	Añadir notificaciones por email (con SendGrid o SMTP).
+Martes	Crear dashboard simple (HTML + JS) que muestre datos en tiempo real.
+Miércoles	Añadir notificaciones por Telegram (opcional).
+Jueves	Documentar todo en README.md, CONTRIBUTING.md, docs/.
+Viernes	Hacer un video corto (1 minuto) mostrando el sistema en acción.
+✅ Entregable Semana 5:
+•	Notificaciones funcionando.
+•	Dashboard simple.
+•	Documentación completa.
+•	Video demostrativo.
+________________________________________
+📁 Estructura del repositorio (actualizada)
+smartpot/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── .gitignore
+├── src/
+│   └── SmartPot.Api/          ← API REST + WebSockets
+├── hardware/
+│   └── esp32-smartpot/      ← Código para ESP32 (C++)
+├── docs/
+│   ├── architecture.md      ← Diagrama de arquitectura
+│   ├── hardware.md          ← Guía de hardware
+│   └── deployment.md        ← Guía de despliegue en Raspberry Pi
+├── docker-compose.yml
+└── .github/
+    └── workflows/
+        └── ci.yml
+

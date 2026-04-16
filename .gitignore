@@ -1,0 +1,64 @@
+## .gitignore para GrowPots (ASP.NET Core + Docker + ESP32)
+
+# ────────────────────────────────────────────────────────────────
+# .NET / ASP.NET Core
+# ────────────────────────────────────────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.swp
+*.DS_Store
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publicación
+publish/
+out/
+
+# Logs y datos temporales
+*.log
+*.tmp
+
+# Secretos y configuración local
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.p12
+
+# ────────────────────────────────────────────────────────────────
+# Docker
+# ────────────────────────────────────────────────────────────────
+.dockerenv
+docker-compose.override.yml
+
+# ────────────────────────────────────────────────────────────────
+# ESP32 / PlatformIO / Arduino
+# ────────────────────────────────────────────────────────────────
+hardware/.pio/
+hardware/.pioenvs/
+hardware/.piolibdeps/
+hardware/*.bin
+hardware/*.elf
+hardware/*.map
+
+# ────────────────────────────────────────────────────────────────
+# IDEs y editores
+# ────────────────────────────────────────────────────────────────
+.idea/
+.vscode/settings.json
+*.code-workspace
+
+# ────────────────────────────────────────────────────────────────
+# Base de datos
+# ────────────────────────────────────────────────────────────────
+*.sqlite
+*.db
+pgdata/
